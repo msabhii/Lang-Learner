@@ -1,0 +1,42 @@
+<%- include("partials/header.ejs") %>
+import("./quiz.ejs");
+  </head>
+  <body>
+    <h1>Dashboard</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= user%></td>
+          <td><%= user %>@gmail.com</td>
+         
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      // Get the user's information from a database or other source
+      const user = {
+        name: username,
+        email: "john.doe@example.com",
+        score: 100,
+      };
+
+      // Populate the dashboard content with the user's information
+      document.querySelector(".table tbody tr td:first-child").textContent =
+        user.name;
+      document.querySelector(".table tbody tr td:nth-child(2)").textContent =
+        user.email;
+      document.querySelector(".table tbody tr td:last-child").textContent =
+        user.score;
+    </script>
+  </body>
+</html>
+<%- include("partials/footer.ejs") %>
