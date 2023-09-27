@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %>
+<section id="signup" class="signup-section">
+<div class="hero-section">
+<select id="language-selector">
+  <option value="en">English</option>
+  <option value="fr">French</option>
+  <option value="es">Spanish</option>
+  <option value="de">German</option>
+  <option value="ja">Japanese</option>
+</select><br><br>
+<script src="quiz.js"></script>
+<a href="/quiz" class="cta-button">Change Language</a>
+</div>
+</section>
+<%- include("quiz.ejs") %>
+
+
+
+<%- include("partials/footer.ejs") %>

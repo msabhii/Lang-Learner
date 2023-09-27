@@ -1,0 +1,143 @@
+
+
+<%- include("partials/header.ejs") %>
+
+<body>
+    <section id="signup" class="signup-section">
+    <div class="quiz">
+        <h1>Language Learning Quiz</h1>
+        <form id="quiz-form">
+            <!--!! Question 1 -->
+            <div class="question">
+                <p>What is the capital of France?</p>
+                <input type="radio" name="q1" value="A"> Berlin<br>
+                <input type="radio" name="q1" value="B"> Madrid<br>
+                <input type="radio" name="q1" value="C"> Paris<br>
+                <input type="radio" name="q1" value="D"> Rome<br>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <p>Translate 'Bonjour' to English:</p>
+                <input type="text" name="q2" placeholder="Your answer"><br>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <p>Complete the sentence: "I ____ a book."</p>
+                <input type="text" name="q3" placeholder="Your answer"><br>
+            </div>
+
+            <div class="question">
+                <p>What is the Spanish word for "hello"?</p>
+                <input type="radio" name="q4" value="A"> Buenos días<br>
+                <input type="radio" name="q4" value="B"> Hola<br>
+                <input type="radio" name="q4" value="C"> Adiós<br>
+                <input type="radio" name="q4" value="D"> Buenas tardes<br>
+            </div>
+
+<div class="question">
+                <p>What is the German word for "water"?</p>
+                <input type="radio" name="q5" value="A"> Wasser<br>
+                <input type="radio" name="q5" value="B"> Bier<br>
+                <input type="radio" name="q5" value="C"> Brot<br>
+                <input type="radio" name="q5" value="D"> Käse<br>
+            </div>
+
+<div class="question">
+                <p>What is the French word for "house"?</p>
+                <input type="radio" name="q6" value="A"> Maison<br>
+                <input type="radio" name="q6" value="B"> Appartement<br>
+                <input type="radio" name="q6" value="C"> Hôtel<br>
+                <input type="radio" name="q6" value="D"> Bureau<br>
+            </div>
+
+<div class="question">
+                <p>What is the Chinese word for "cat"?</p>
+                <input type="radio" name="q7" value="A"> 猫 (māo)<br>
+                <input type="radio" name="q7" value="B"> 狗 (gǒu)<br>
+                <input type="radio" name="q7" value="C"> 鸟 (niǎo)<br>
+                <input type="radio" name="q7" value="D"> 鱼 (yú)<br>
+            </div>
+
+<div class="question">
+                <p>What is the Japanese word for "dog"?</p>
+                <input type="radio" name="q8" value="A"> 猫 (māo)<br>
+                <input type="radio" name="q8" value="B"> 犬 (inu)<br>
+                <input type="radio" name="q8" value="C"> 鳥 (niǎo)<br>
+                <input type="radio" name="q8" value="D"> 魚 (yú)<br>
+            </div>
+
+<div class="question">
+                <p>What is the Korean word for "school"?</p>
+                <input type="radio" name="q9" value="A"> 학교 (hak-gyo)<br>
+                <input type="radio" name="q9" value="B"> 선생님 (seonsaengnim)<br>
+                <input type="radio" name="q9" value="C"> 친구 (chingu)<br>
+                <input type="radio" name="q9" value="D"> 안녕하세요 (annyeonghaseyo)<br>
+            </div>
+
+<div class="question">
+                <p>What is the Portuguese word for "friend"?</p>
+                <input type="radio" name="q10" value="A"> Amigo(a)<br>
+                <input type="radio" name="q10" value="B"> Olá<br>
+                <input type="radio" name="q10" value="C"> Obrigado(a)<br>
+                <input type="radio" name="q10" value="D"> Tchau<br>
+            </div>
+
+<div class="question">
+                <p>What is the Russian word for "love"?</p>
+                <input type="radio" name="q11" value="A"> Любовь (lyubov')<br>
+                <input type="radio" name="q11" value="B"> Привет (privet)<br>
+                <input type="radio" name="q11" value="C"> Спасибо (spasibo)<br>
+                <input type="radio" name="q11" value="D"> До свидания (do svidaniya)<br>
+
+            <button type="submit">Submit Answers</button>
+        </form>
+    </div>
+</section>
+    <!-- Add your JavaScript code for answer verification here -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const quizForm = document.getElementById('quiz-form');
+    quizForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        
+        // answers for each question here
+        const answers = {
+            q1: 'C', // Correct answer for Question 1
+            q2: 'Hello', // Correct answer for Question 2
+            q3: 'have', // Correct answer for Question 3
+            q4: 'B', // Correct answer for Question 4
+            q5: 'A', // Correct answer for Question 5
+            q6: 'A', // Correct answer for Question 6
+            q7: 'A', // Correct answer for Question 7
+            q8: 'B', // Correct answer for Question 8
+            q9: 'A', // Correct answer for Question 9
+            q10: 'A', // Correct answer for Question 10
+            q11: 'A', // Correct answer for Question 11
+};
+        // Initialize a variable to keep track of the user's score
+        let score = 0;
+
+        // Loop through the answers object to check each question
+        for (const questionName in answers) {
+            if (answers.hasOwnProperty(questionName)) {
+                const userAnswer = quizForm.elements[questionName].value;
+                const correctAnswer = answers[questionName];
+
+                // Check if the user's answer matches the correct answer
+                if (userAnswer === correctAnswer) {
+                    score++;
+                }
+            }
+        }
+
+        // Display the user's score (you can customize this output)
+        alert(`Your score: ${score}/${Object.keys(answers).length}`);
+    });
+});
+
+    </script>
+</body>
+</html>
+<%- include("partials/footer.ejs") %>

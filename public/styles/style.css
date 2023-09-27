@@ -1,0 +1,206 @@
+/* Reset some default styles for better consistency */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-section h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #00aaff;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #0088cc;
+}
+
+.signup-section {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.signup-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.signup-section form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.signup-section input[type="text"],
+.signup-section input[type="email"],
+.signup-section input[type="password"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup-section button[type="submit"] {
+    background-color: #00aaff;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.signup-section button[type="submit"]:hover {
+    background-color: #0088cc;
+}
+
+footer {
+    align-items: baseline;
+    background-color: #fff;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Responsive design (adjust as needed) */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        color: #ccc;
+    }
+}
+
+a{
+    text-decoration: none;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#language-selector {
+  /* Set the width of the dropdown */
+  width: 200px;
+  /* Style the dropdown to have a border and rounded corners */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  /* Add padding to the dropdown */
+  padding: 8px;
+  /* Set the default background and text color */
+  background-color: #fff;
+  color: #333;
+  /* Make the dropdown cursor change to a pointer on hover */
+  cursor: pointer;
+}
+
+#language-selector select {
+  /* Remove the default dropdown arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* Add a custom arrow icon using a background image */
+  background-image: url('arrow-down.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+  /* Set the width to 100% to fill the container */
+  width: 100%;
+  /* Remove default styles like borders and outlines */
+  border: none;
+  outline: none;
+}
+
+/* Style the dropdown options */
+#language-selector select option {
+  /* Set the background and text color for options */
+  background-color: #fff;
+  color: #333;
+}
+
+/* Style the dropdown when it's open */
+#language-selector select:focus {
+  /* Add a box shadow to indicate focus */
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
